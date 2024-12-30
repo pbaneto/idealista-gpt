@@ -1,0 +1,17 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log

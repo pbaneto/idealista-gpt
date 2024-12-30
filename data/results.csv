@@ -1,0 +1,171 @@
+,distrito,precio,zona
+0,Madrid,4.891,venta-centro
+1,Arganzuela,5.062,venta-centro
+2,Barajas,3.901,venta-centro
+3,Carabanchel,2.889,venta-centro
+4,Centro,6.594,venta-centro
+5,Chamartín,6.573,venta-centro
+6,Chamberí,7.173,venta-centro
+7,Ciudad Lineal,4.002,venta-centro
+8,Fuencarral,4.305,venta-centro
+9,Hortaleza,4.490,venta-centro
+10,Latina,3.068,venta-centro
+11,Moncloa,5.147,venta-centro
+12,Moratalaz,3.327,venta-centro
+13,Puente de Vallecas,2.518,venta-centro
+14,Retiro,6.333,venta-centro
+15,Salamanca,8.642,venta-centro
+16,San Blas,3.194,venta-centro
+17,Tetuán,4.950,venta-centro
+18,Usera,2.719,venta-centro
+19,Vicálvaro,3.297,venta-centro
+20,Villa de Vallecas,2.989,venta-centro
+21,Villaverde,2.204,venta-centro
+22,Madrid,"20,5",alquiler-centro
+23,Arganzuela,"20,4",alquiler-centro
+24,Barajas,"14,6",alquiler-centro
+25,Carabanchel,"16,0",alquiler-centro
+26,Centro,"25,0",alquiler-centro
+27,Chamartín,"21,0",alquiler-centro
+28,Chamberí,"24,1",alquiler-centro
+29,Ciudad Lineal,"17,2",alquiler-centro
+30,Fuencarral,"16,0",alquiler-centro
+31,Hortaleza,"16,3",alquiler-centro
+32,Latina,"17,0",alquiler-centro
+33,Moncloa,"19,4",alquiler-centro
+34,Moratalaz,"15,0",alquiler-centro
+35,Puente de Vallecas,"16,4",alquiler-centro
+36,Retiro,"21,5",alquiler-centro
+37,Salamanca,"25,0",alquiler-centro
+38,San Blas,"15,2",alquiler-centro
+39,Tetuán,"20,3",alquiler-centro
+40,Usera,"17,0",alquiler-centro
+41,Vicálvaro,"14,2",alquiler-centro
+42,Villa de Vallecas,"15,1",alquiler-centro
+43,Villaverde,"15,0",alquiler-centro
+44,Madrid provincia,3.712,venta-provincia
+45,Madrid,4.891,venta-provincia
+46,Ajalvir,2.598,venta-provincia
+47,Alcalá de Henares,2.328,venta-provincia
+48,Alcobendas,2.951,venta-provincia
+49,Alcorcón,2.649,venta-provincia
+50,Algete,1.912,venta-provincia
+51,Alpedrete,2.124,venta-provincia
+52,Aranjuez,1.728,venta-provincia
+53,Arganda,2.075,venta-provincia
+54,Arroyomolinos,2.106,venta-provincia
+55,Becerril de la Sierra,1.978,venta-provincia
+56,Boadilla del Monte,3.170,venta-provincia
+57,Brunete,2.667,venta-provincia
+58,Cadalso de los Vidrios,945,venta-provincia
+59,Campo Real,1.569,venta-provincia
+60,Carabaña,1.252,venta-provincia
+61,Cercedilla,2.057,venta-provincia
+62,Chinchón,1.183,venta-provincia
+63,Ciempozuelos,1.474,venta-provincia
+64,Ciudalcampo,3.018,venta-provincia
+65,Cobeña,2.305,venta-provincia
+66,Collado Mediano,1.935,venta-provincia
+67,Collado Villalba,2.247,venta-provincia
+68,Colmenar Viejo,2.509,venta-provincia
+69,Colmenarejo,1.990,venta-provincia
+70,Coslada,2.427,venta-provincia
+71,Cubas de la Sagra,1.574,venta-provincia
+72,Daganzo de Arriba,2.258,venta-provincia
+73,El Álamo,1.627,venta-provincia
+74,El Boalo,2.101,venta-provincia
+75,El Escorial,2.197,venta-provincia
+76,El Molar,1.821,venta-provincia
+77,Eurovillas,1.352,venta-provincia
+78,Fuenlabrada,2.151,venta-provincia
+79,Fuente del Fresno,3.271,venta-provincia
+80,Fuente el Saz de Jarama,1.938,venta-provincia
+81,Galapagar,2.118,venta-provincia
+82,Getafe,2.565,venta-provincia
+83,Griñón,1.780,venta-provincia
+84,Guadalix de la Sierra,1.950,venta-provincia
+85,Guadarrama,2.068,venta-provincia
+86,Hoyo de Manzanares,2.376,venta-provincia
+87,Humanes de Madrid,1.879,venta-provincia
+88,La Moraleja,5.611,venta-provincia
+89,Las Rozas de Madrid,3.390,venta-provincia
+90,Leganés,2.460,venta-provincia
+91,Loeches,1.847,venta-provincia
+92,Los Santos de la Humosa,1.274,venta-provincia
+93,Majadahonda,3.721,venta-provincia
+94,Meco,1.802,venta-provincia
+95,Mejorada del Campo,1.798,venta-provincia
+96,Miraflores de la Sierra,1.946,venta-provincia
+97,Moraleja de Enmedio,2.279,venta-provincia
+98,Moralzarzal,2.348,venta-provincia
+99,Morata de Tajuña,1.391,venta-provincia
+100,Móstoles,2.295,venta-provincia
+101,Navacerrada,2.405,venta-provincia
+102,Navalcarnero,1.819,venta-provincia
+103,Paracuellos de Jarama,2.438,venta-provincia
+104,Parla,1.838,venta-provincia
+105,Pedrezuela,1.827,venta-provincia
+106,Pelayos de la Presa,1.087,venta-provincia
+107,Pinto,2.242,venta-provincia
+108,Pozuelo de Alarcón,4.126,venta-provincia
+109,Quijorna,1.715,venta-provincia
+110,Rivas-Vaciamadrid,2.657,venta-provincia
+111,San Agustin de Guadalix,2.479,venta-provincia
+112,San Fernando de Henares,2.300,venta-provincia
+113,San Lorenzo de el Escorial,2.298,venta-provincia
+114,San Martín de la Vega,1.441,venta-provincia
+115,San Martín de Valdeiglesias,1.260,venta-provincia
+116,San Sebastián de los Reyes,3.268,venta-provincia
+117,Santo Domingo,2.886,venta-provincia
+118,Serranillos del Valle,1.480,venta-provincia
+119,Sevilla la Nueva,1.996,venta-provincia
+120,Soto del Real,2.426,venta-provincia
+121,Torrejón de Ardoz,2.388,venta-provincia
+122,Torrejón de la Calzada,1.688,venta-provincia
+123,Torrelaguna,1.274,venta-provincia
+124,Torrelodones,2.729,venta-provincia
+125,Tres Cantos,3.254,venta-provincia
+126,Valdemorillo,2.019,venta-provincia
+127,Valdemoro,2.056,venta-provincia
+128,Valdeolmos-Alalpardo,1.830,venta-provincia
+129,Valdetorres de Jarama,1.684,venta-provincia
+130,Villa del Prado,1.055,venta-provincia
+131,Villalbilla,1.692,venta-provincia
+132,Villanueva de la Cañada,2.727,venta-provincia
+133,Villanueva del Pardillo,2.899,venta-provincia
+134,Villarejo de Salvanés,913,venta-provincia
+135,Villaviciosa de Odón,2.677,venta-provincia
+136,Madrid provincia,"18,6",alquiler-provincia
+137,Madrid,"20,5",alquiler-provincia
+138,Alcalá de Henares,"12,0",alquiler-provincia
+139,Alcobendas,"14,7",alquiler-provincia
+140,Alcorcón,"13,0",alquiler-provincia
+141,Aranjuez,"10,6",alquiler-provincia
+142,Arganda,"11,4",alquiler-provincia
+143,Boadilla del Monte,"12,3",alquiler-provincia
+144,Collado Villalba,"12,0",alquiler-provincia
+145,Colmenar Viejo,"11,0",alquiler-provincia
+146,Coslada,"12,3",alquiler-provincia
+147,El Escorial,"10,2",alquiler-provincia
+148,Fuenlabrada,"11,4",alquiler-provincia
+149,Galapagar,"11,3",alquiler-provincia
+150,Getafe,"13,0",alquiler-provincia
+151,La Moraleja,"18,2",alquiler-provincia
+152,Las Rozas de Madrid,"13,9",alquiler-provincia
+153,Leganés,"12,6",alquiler-provincia
+154,Majadahonda,"14,7",alquiler-provincia
+155,Móstoles,"12,3",alquiler-provincia
+156,Paracuellos de Jarama,"10,5",alquiler-provincia
+157,Parla,"11,3",alquiler-provincia
+158,Pinto,"10,8",alquiler-provincia
+159,Pozuelo de Alarcón,"15,0",alquiler-provincia
+160,Rivas-Vaciamadrid,"11,2",alquiler-provincia
+161,San Lorenzo de el Escorial,"11,0",alquiler-provincia
+162,San Sebastián de los Reyes,"15,0",alquiler-provincia
+163,Torrejón de Ardoz,"12,3",alquiler-provincia
+164,Torrelodones,"13,2",alquiler-provincia
+165,Tres Cantos,"12,7",alquiler-provincia
+166,Valdemoro,"11,4",alquiler-provincia
+167,Villanueva de la Cañada,"14,8",alquiler-provincia
+168,Villanueva del Pardillo,"12,8",alquiler-provincia
+169,Villaviciosa de Odón,"16,9",alquiler-provincia
