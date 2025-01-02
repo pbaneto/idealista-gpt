@@ -1,118 +1,111 @@
-# Get data for each district
-
 import os
 import json
+import time
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
 
-def get_article_info_venta(article):
+def get_article_info(article, tipo):
     article_info = {}
     info = article.find_all('div', class_='item-info-container')
+    item_link = info[0].find_all('a', class_='item-link')
 
-    try:
-        item_link = info[0].find_all('a', class_='item-link')
-    except Exception as e:
-        continue
+    if len(item_link):
+        try:
+            href = item_link[0]['href']
+        except Exception as e:
+            href = None
 
-    try:
-        href = item_link[0]['href']
-    except Exception as e:
-        href = None
-
-    try:
-        title = item_link[0]['title']
-    except Exception as e:
-        title = None
+        try:
+            title = item_link[0]['title']
+        except Exception as e:
+            title = None
 
     article_info['href'] = href
     article_info['title'] = title
 
-
     divs = info[0].find_all('div')
-    if len(divs):
-        try:
-            price = divs[0].find_all('span', class_='item-price')[0].text
-        except Exception as e:
-            price = None
+    for div in divs:
+        if 'price-row' in div.get('class'):
+            try:
+                price = div.find_all('span', class_='item-price')[0].text
+            except Exception as e:
+                price = None
+            try:
+                parking = div.find_all('span', class_='item-parking')[0].text
+            except Exception as e:
+                parking = None
 
-        try:
-            parking = divs[0].find_all('span', class_='item-parking')[0].text
-        except Exception as e:
-            parking = None
+        elif 'item-detail-char' in div.get('class'):
+            spans = div.find_all('span')
+            details = []
+            for span in spans:
+                details.append(span.text)
 
-        try:
-            hab = divs[1].find_all('span', class_='item-detail')[0].text
-        except Exception as e:
-            hab = None
+    try:
+        description = info[0].find_all('div', class_='item-description')[0].text
+    except Exception as e:
+        description = None
 
-        try:
-            meters = divs[1].find_all('span', class_='item-detail')[1].text
-        except Exception as e:
-            meters = None
+    article_info['price'] = price
+    article_info['parking'] = parking
+    article_info['details'] = details
+    article_info['description'] = description
 
-        try:
-            floor = divs[1].find_all('span', class_='item-detail')[2].text
-        except Exception as e:
-            floor = None
-
-        try:
-            description = info[0].find_all('div', class_='item-description')[0].text
-        except Exception as e:
-            description = None
-
-        article_info['price'] = price
-        article_info['parking'] = parking
-        article_info['hab'] = hab
-        article_info['meters'] = meters
-        article_info['floor'] = floor
-        article_info['description'] = description
-
-    with open(f'data/{distrito}_venta.jsonl', 'a') as f:
+    with open(f'data/{distrito}_{tipo}.jsonl', 'a') as f:
         json.dump(article_info, f)
         f.write('\n')
 
-
-def get_article_info_alquiler(article):
-    #TODO: write code
     return article
 
 
-def get_articles(distrito, tipo):
+def fetch_content(api_key, url, max_retries=3, delay=2):
+    payload = {"api_key": api_key, "url": url, "render": True}
 
-    url = f'https://www.idealista.com/{tipo}-viviendas/madrid/{distrito}/con-pisos'
+    for attempt in range(max_retries):
+        try:
+            response = requests.get("http://api.scraperapi.com", params=payload)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, 'lxml')
+                return soup
+            else:
+                print(f"Attempt {attempt + 1} failed with status code: {response.status_code}")
+        except requests.RequestException as e:
+            print(f"Attempt {attempt + 1} encountered an error: {e} {url}")
+
+        time.sleep(delay)
+
+    print("Max retries reached. Continuing without successful response.")
+    return None
+
+
+def get_articles(distrito, tipo, zona):
+    if zona == 'centro':
+        url = f'https://www.idealista.com/{tipo}-viviendas/madrid/{distrito}/con-pisos'
+    else:
+        url = f'https://www.idealista.com/{tipo}-viviendas/{distrito}-madrid/'
 
     while True:
-        payload = {"api_key": API_KEY, "url": url, "render": True}
-        response = requests.get("http://api.scraperapi.com", params=payload)
-        soup = BeautifulSoup(response.text, 'lxml')
+        soup = fetch_content(API_KEY, url)
+        if soup is None:
+            break
 
-
-        articles = soup.find_all('article')
-
+        articles = soup.find_all('article', class_='item')
 
         # Get everything from each article
         for article in articles:
-            if tipo == 'venta':
-                try:
-                    get_article_info_venta(article)
-                except Exception as e:
-                    print('ERROR')
-
-            elif tipo == 'alquiler':
-                try:
-                    get_article_info_alquiler(article)
-                except Exception as e:
-                    print('ERROR')
-
+            try:
+                get_article_info(article, tipo)
+            except Exception as e:
+                print('ERROR')
 
         # Get link to next page in idealista
-        next_uri = soup.find_all('div', class_='pagination')[0].find_all('a', class_='icon-arrow-right-after')
-        if len(next_uri) > 0:
+        try:
+            next_uri = soup.find_all('div', class_='pagination')[0].find_all('a', class_='icon-arrow-right-after')
             next_uri = next_uri[0]['href']
-            url = f'https://idealista.com/{next_uri}'
-        else:
+            url = f'https://idealista.com{next_uri}'
+        except Exception as e:
             return
 
 
@@ -121,8 +114,15 @@ API_KEY = os.getenv('API_KEY')
 
 
 df = pd.read_csv('data/average_metrics.csv')
-distritos = df['distrito'].tolist()
+distritos = df[['distrito', 'tipo']].set_index('distrito')['tipo'].to_dict()
 
-for distrito in distritos:
-    get_articles(distrito, 'venta')
-    get_articles(distrito, 'alquiler')
+for distrito, zona in distritos.items():
+    if not os.path.exists(f'data/{distrito}_venta.jsonl'):
+        get_articles(distrito, 'venta', zona)
+    else:
+        print(distrito, 'venta already exists')
+
+    if not os.path.exists(f'data/{distrito}_alquiler.jsonl'):
+        get_articles(distrito, 'alquiler', zona)
+    else:
+        print(distrito, 'alquiler already exists')
