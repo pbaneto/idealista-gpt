@@ -15,7 +15,6 @@ dist/
 
 # Logs
 *.log
-data
 **/.ipynb_checkpoints/*
 local
-data
+data/
