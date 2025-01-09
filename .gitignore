@@ -17,3 +17,4 @@ dist/
 *.log
 data
 **/.ipynb_checkpoints/*
+local
