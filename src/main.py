@@ -1,12 +1,8 @@
-# Put together all the retrieved data
-
 import os
 import re
 import math
 import pandas as pd
-import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-
 
 
 # Load advertised time per flat
@@ -136,7 +132,7 @@ data = df_grouped.pivot_table(
     values=['€/meter', 'size', 'advertised_time']
 ).reset_index()
 
-data.columns = ['distrito', 'mean_meters', 'advertised_rent', 'advertised_sell', 'size_rent', 'size_sell', '€/meter_rent', '€/meter_sell']
+data.columns = ['distrito', 'mean_meters', 'advertised_rent_time', 'advertised_sell_time', 'size_rent', 'size_sell', '€/meter_rent', '€/meter_sell']
 data.fillna(0, inplace=True)
 
 data['apartments'] = data['distrito'].apply(lambda x: int(apartments[x]))
