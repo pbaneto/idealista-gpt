@@ -17,4 +17,3 @@ dist/
 *.log
 notebooks/.ipynb_checkpoints/
 local
-/data/
