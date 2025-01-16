@@ -7,14 +7,9 @@ The goal is to measure which districts are the best for investment according to 
 
 ### PER (Price-to-Earnings Ratio)
 
-The **PER** is calculated as:
+The **PER** is number of years to recover the investment:
 
 > PER = Purchase Price  / Annual Rental Income
-
-Where:
-
-- **Purchase Price** = Total price paid for the property.
-- **Annual Rental Income** = Total income from renting the property for one year.
 
 A lower PER value generally indicates a more attractive investment.
 
@@ -25,12 +20,6 @@ A lower PER value generally indicates a more attractive investment.
 The **Annual Rental Yield** is calculated as:
 
 > Annual Rental Yield = (Annual Rental Income / Purchase Price) * 100
-
-
-Where:
-
-- **Annual Rental Income** = Total income from renting the property for one year.
-- **Purchase Price** = Total price paid for the property.
 
 This value is expressed as a percentage and represents the annual return from renting the property compared to its purchase price.
 
